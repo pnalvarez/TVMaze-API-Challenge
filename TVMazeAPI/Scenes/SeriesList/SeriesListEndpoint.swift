@@ -19,7 +19,10 @@ enum SeriesListEndpoint: EndpointExposable {
   }
   
   var headers: [String : String]? {
-    nil
+    switch self {
+    case let .seriesList(page):
+      return ["page" : "\(page)"]
+    }
   }
   
   var body: Data? {

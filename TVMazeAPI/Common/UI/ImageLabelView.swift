@@ -22,13 +22,14 @@ public final class ImageLabelView: UIView {
     static let imageWidth: CGFloat = 48
     static let imageLeading: CGFloat = 16
     static let imageTop: CGFloat = 4
-    static let imageBottom: CGFloat = 4
+    static let imageBottom: CGFloat = -4
     static let labelLeading: CGFloat = 16
   }
   
   // MARK: - UI Properties
   private lazy var imageView: UIImageView = {
     let imageView = UIImageView()
+    imageView.contentMode = .scaleAspectFit
     imageView.layer.cornerRadius = Constants.imageRadius
     imageView.translatesAutoresizingMaskIntoConstraints = false
     return imageView

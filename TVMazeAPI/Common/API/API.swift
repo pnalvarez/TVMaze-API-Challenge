@@ -9,7 +9,8 @@ import Foundation
 import Combine
 
 protocol APIProtocol {
-  func fetchData<T: Decodable>(_ endpoint: EndpointExposable) -> AnyPublisher<T, Error>
+  associatedtype T: Decodable
+  func fetchData(_ endpoint: EndpointExposable) -> AnyPublisher<T, Error>
 }
 
 enum APIError: Error {
@@ -17,8 +18,8 @@ enum APIError: Error {
   case genericError(_ description: String)
 }
 
-final class API: APIProtocol {
-  private let basePath = "https://api.tvmaze.com/"
+final class API<T: Decodable>: APIProtocol {
+  private let basePath = "https://api.tvmaze.com"
   
   private func makeExtraHeaders(from endpoint: EndpointExposable) -> String? {
     var headerString = "?"
@@ -37,7 +38,7 @@ final class API: APIProtocol {
   }
   
   func fetchData<T: Decodable>(_ endpoint: EndpointExposable) -> AnyPublisher<T, Error> {
-    let path = basePath + endpoint.path + "\(String(describing: makeExtraHeaders(from: endpoint)))"
+    let path = basePath + endpoint.path + "\(String(describing: makeExtraHeaders(from: endpoint) ?? ""))"
     guard let url = URL(string: path) else {
       return Fail(error: APIError.urlError).eraseToAnyPublisher()
     }

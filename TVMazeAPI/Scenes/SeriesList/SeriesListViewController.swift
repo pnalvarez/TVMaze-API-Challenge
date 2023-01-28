@@ -17,6 +17,7 @@ final class SeriesListViewController: UIViewController {
     tableView.registerCell(cellType: SeriesListTableViewCell.self)
     tableView.delegate = self
     tableView.dataSource = self
+    tableView.prefetchDataSource = self
     return tableView
   }()
   
@@ -48,6 +49,7 @@ final class SeriesListViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    tabBarItem = UITabBarItem(title: "List", image: nil, tag: 0)
     setupSubscribers()
     viewModel.viewDidLoad()
   }
@@ -57,12 +59,19 @@ private extension SeriesListViewController {
   func setupSubscribers() {
     viewModel
       .loadingPublisher
-      .sink(receiveValue: { self.loadingView.isHidden = $0 })
+      .sink(receiveValue: { self.loadingView.isHidden = !$0 })
       .store(in: &subscriptions)
     viewModel
       .updateUIPublisher
       .sink(receiveValue: {
       self.tableView.reloadData()
+    })
+    .store(in: &subscriptions)
+    viewModel
+      .showErrorPublisher
+      .sink(receiveValue: {
+      self.errorView.isHidden = false
+      self.errorView.setErrorText($0)
     })
     .store(in: &subscriptions)
   }

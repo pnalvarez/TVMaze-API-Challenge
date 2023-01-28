@@ -12,5 +12,5 @@ struct SeriesModel: Decodable {
 }
 
 struct SeriesImageModel: Decodable {
-  let original: String
+  let medium: String
 }

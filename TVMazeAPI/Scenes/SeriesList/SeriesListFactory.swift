@@ -5,4 +5,8 @@
 //  Created by Pedro Alvarez on 27/01/23.
 //
 
-import Foundation
+enum SeriesListFactory {
+  static func build() -> SeriesListViewController {
+    SeriesListViewController(viewModel: SeriesListViewModel())
+  }
+}

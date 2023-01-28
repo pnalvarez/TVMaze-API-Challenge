@@ -51,6 +51,7 @@
 		3FD15D3D2985B1A700A63B4C /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD15D3C2985B1A700A63B4C /* LoadingView.swift */; };
 		3FD15D3F2985B4C400A63B4C /* GenericErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD15D3E2985B4C400A63B4C /* GenericErrorView.swift */; };
 		3FD15D412985B55400A63B4C /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD15D402985B55400A63B4C /* ColorPalette.swift */; };
+		3FD15D482985BF1600A63B4C /* SeriesListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD15D472985BF1600A63B4C /* SeriesListService.swift */; };
 		68A801C91ECB345828D05D64 /* Pods_TVMazeAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74177398648CAAE7BFEEFC2D /* Pods_TVMazeAPI.framework */; };
 		77B1B2CD8E7641811D2B6549 /* Pods_TVMazeAPITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C8E9B6418B46877123BF178 /* Pods_TVMazeAPITests.framework */; };
 		D6E261963CA191B3541EBE1D /* Pods_TVMazeAPI_TVMazeAPIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6EAE9B7E20D5E59A4850AF /* Pods_TVMazeAPI_TVMazeAPIUITests.framework */; };
@@ -123,6 +124,7 @@
 		3FD15D3C2985B1A700A63B4C /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		3FD15D3E2985B4C400A63B4C /* GenericErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericErrorView.swift; sourceTree = "<group>"; };
 		3FD15D402985B55400A63B4C /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
+		3FD15D472985BF1600A63B4C /* SeriesListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesListService.swift; sourceTree = "<group>"; };
 		5729B304C31EBD880E78EB88 /* Pods-TVMazeAPITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMazeAPITests.debug.xcconfig"; path = "Target Support Files/Pods-TVMazeAPITests/Pods-TVMazeAPITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6A6EAE9B7E20D5E59A4850AF /* Pods_TVMazeAPI_TVMazeAPIUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TVMazeAPI_TVMazeAPIUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72BE9D27C46AA71D86CFE9C2 /* Pods-TVMazeAPI-TVMazeAPIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMazeAPI-TVMazeAPIUITests.release.xcconfig"; path = "Target Support Files/Pods-TVMazeAPI-TVMazeAPIUITests/Pods-TVMazeAPI-TVMazeAPIUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 		3FD15CDF2984389800A63B4C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				3FD15D492985C36200A63B4C /* Utils */,
 				3FD15D2929846C9A00A63B4C /* Facade */,
 				3FD15D2629846BDF00A63B4C /* Extensions */,
 				3FD15CE529843A6500A63B4C /* Models */,
@@ -295,6 +298,7 @@
 				3FD15D342985AA3800A63B4C /* SeriesListTableViewCell.swift */,
 				3FD15D382985AC9600A63B4C /* SeriesListViewModel.swift */,
 				3FD15D3A2985ACD800A63B4C /* SeriesDisplayModel.swift */,
+				3FD15D472985BF1600A63B4C /* SeriesListService.swift */,
 			);
 			path = SeriesList;
 			sourceTree = "<group>";
@@ -351,6 +355,13 @@
 				3FD15D2A29846CA900A63B4C /* DependencyContainer.swift */,
 			);
 			path = Facade;
+			sourceTree = "<group>";
+		};
+		3FD15D492985C36200A63B4C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		4A140FBADDD636DF46ACB41D /* Pods */ = {
@@ -648,6 +659,7 @@
 				3FD15CFA2984695400A63B4C /* EpisodeModel.swift in Sources */,
 				3FD15D2829846BE900A63B4C /* UITableView.swift in Sources */,
 				3FD15D392985AC9600A63B4C /* SeriesListViewModel.swift in Sources */,
+				3FD15D482985BF1600A63B4C /* SeriesListService.swift in Sources */,
 				3FD15D2B29846CA900A63B4C /* DependencyContainer.swift in Sources */,
 				3FD15D2D2985A27C00A63B4C /* ImageLabelView.swift in Sources */,
 				3FD15D2529846BCE00A63B4C /* EpisodeDetailsFactory.swift in Sources */,
