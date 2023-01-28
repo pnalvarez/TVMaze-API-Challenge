@@ -8,7 +8,7 @@
 import Foundation
 
 enum SeriesListEndpoint: EndpointExposable {
-  case seriesList
+  case seriesList(page: Int)
   
   var path: String {
     "/shows"

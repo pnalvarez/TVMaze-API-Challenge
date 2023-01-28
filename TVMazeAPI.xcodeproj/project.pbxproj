@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,9 +19,6 @@
 		3FD15CEB29843B0700A63B4C /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD15CEA29843B0700A63B4C /* HTTPMethod.swift */; };
 		3FD15CED29845EBF00A63B4C /* SeriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD15CEC29845EBF00A63B4C /* SeriesModel.swift */; };
 		3FD15CF029845F8300A63B4C /* SeriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD15CEF29845F8300A63B4C /* SeriesListViewController.swift */; };
-		3FD15CF229845F8C00A63B4C /* SeriesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD15CF129845F8C00A63B4C /* SeriesListPresenter.swift */; };
-		3FD15CF429845F9400A63B4C /* SeriesListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD15CF329845F9400A63B4C /* SeriesListInteractor.swift */; };
-		3FD15CF629845F9B00A63B4C /* SeriesListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD15CF529845F9B00A63B4C /* SeriesListWireframe.swift */; };
 		3FD15CF829845FA400A63B4C /* SeriesListEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD15CF729845FA400A63B4C /* SeriesListEndpoint.swift */; };
 		3FD15CFA2984695400A63B4C /* EpisodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD15CF92984695400A63B4C /* EpisodeModel.swift */; };
 		3FD15CFC2984696700A63B4C /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD15CFB2984696700A63B4C /* ImageModel.swift */; };
@@ -45,6 +42,18 @@
 		3FD15D2329846BC500A63B4C /* SeriesSearchFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD15D2229846BC500A63B4C /* SeriesSearchFactory.swift */; };
 		3FD15D2529846BCE00A63B4C /* EpisodeDetailsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD15D2429846BCE00A63B4C /* EpisodeDetailsFactory.swift */; };
 		3FD15D2829846BE900A63B4C /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD15D2729846BE900A63B4C /* UITableView.swift */; };
+		3FD15D2B29846CA900A63B4C /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD15D2A29846CA900A63B4C /* DependencyContainer.swift */; };
+		3FD15D2D2985A27C00A63B4C /* ImageLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD15D2C2985A27C00A63B4C /* ImageLabelView.swift */; };
+		3FD15D352985AA3800A63B4C /* SeriesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD15D342985AA3800A63B4C /* SeriesListTableViewCell.swift */; };
+		3FD15D372985ABDC00A63B4C /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD15D362985ABDC00A63B4C /* ReusableView.swift */; };
+		3FD15D392985AC9600A63B4C /* SeriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD15D382985AC9600A63B4C /* SeriesListViewModel.swift */; };
+		3FD15D3B2985ACD800A63B4C /* SeriesDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD15D3A2985ACD800A63B4C /* SeriesDisplayModel.swift */; };
+		3FD15D3D2985B1A700A63B4C /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD15D3C2985B1A700A63B4C /* LoadingView.swift */; };
+		3FD15D3F2985B4C400A63B4C /* GenericErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD15D3E2985B4C400A63B4C /* GenericErrorView.swift */; };
+		3FD15D412985B55400A63B4C /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD15D402985B55400A63B4C /* ColorPalette.swift */; };
+		68A801C91ECB345828D05D64 /* Pods_TVMazeAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74177398648CAAE7BFEEFC2D /* Pods_TVMazeAPI.framework */; };
+		77B1B2CD8E7641811D2B6549 /* Pods_TVMazeAPITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C8E9B6418B46877123BF178 /* Pods_TVMazeAPITests.framework */; };
+		D6E261963CA191B3541EBE1D /* Pods_TVMazeAPI_TVMazeAPIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6EAE9B7E20D5E59A4850AF /* Pods_TVMazeAPI_TVMazeAPIUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +74,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C8E9B6418B46877123BF178 /* Pods_TVMazeAPITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TVMazeAPITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FD15CAC298437EF00A63B4C /* TVMazeAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVMazeAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FD15CAF298437EF00A63B4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FD15CB1298437EF00A63B4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,9 +91,6 @@
 		3FD15CEA29843B0700A63B4C /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		3FD15CEC29845EBF00A63B4C /* SeriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesModel.swift; sourceTree = "<group>"; };
 		3FD15CEF29845F8300A63B4C /* SeriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesListViewController.swift; sourceTree = "<group>"; };
-		3FD15CF129845F8C00A63B4C /* SeriesListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesListPresenter.swift; sourceTree = "<group>"; };
-		3FD15CF329845F9400A63B4C /* SeriesListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesListInteractor.swift; sourceTree = "<group>"; };
-		3FD15CF529845F9B00A63B4C /* SeriesListWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesListWireframe.swift; sourceTree = "<group>"; };
 		3FD15CF729845FA400A63B4C /* SeriesListEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesListEndpoint.swift; sourceTree = "<group>"; };
 		3FD15CF92984695400A63B4C /* EpisodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeModel.swift; sourceTree = "<group>"; };
 		3FD15CFB2984696700A63B4C /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
@@ -107,6 +114,23 @@
 		3FD15D2229846BC500A63B4C /* SeriesSearchFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesSearchFactory.swift; sourceTree = "<group>"; };
 		3FD15D2429846BCE00A63B4C /* EpisodeDetailsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailsFactory.swift; sourceTree = "<group>"; };
 		3FD15D2729846BE900A63B4C /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		3FD15D2A29846CA900A63B4C /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		3FD15D2C2985A27C00A63B4C /* ImageLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLabelView.swift; sourceTree = "<group>"; };
+		3FD15D342985AA3800A63B4C /* SeriesListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesListTableViewCell.swift; sourceTree = "<group>"; };
+		3FD15D362985ABDC00A63B4C /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		3FD15D382985AC9600A63B4C /* SeriesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesListViewModel.swift; sourceTree = "<group>"; };
+		3FD15D3A2985ACD800A63B4C /* SeriesDisplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesDisplayModel.swift; sourceTree = "<group>"; };
+		3FD15D3C2985B1A700A63B4C /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		3FD15D3E2985B4C400A63B4C /* GenericErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericErrorView.swift; sourceTree = "<group>"; };
+		3FD15D402985B55400A63B4C /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
+		5729B304C31EBD880E78EB88 /* Pods-TVMazeAPITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMazeAPITests.debug.xcconfig"; path = "Target Support Files/Pods-TVMazeAPITests/Pods-TVMazeAPITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6A6EAE9B7E20D5E59A4850AF /* Pods_TVMazeAPI_TVMazeAPIUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TVMazeAPI_TVMazeAPIUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72BE9D27C46AA71D86CFE9C2 /* Pods-TVMazeAPI-TVMazeAPIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMazeAPI-TVMazeAPIUITests.release.xcconfig"; path = "Target Support Files/Pods-TVMazeAPI-TVMazeAPIUITests/Pods-TVMazeAPI-TVMazeAPIUITests.release.xcconfig"; sourceTree = "<group>"; };
+		74177398648CAAE7BFEEFC2D /* Pods_TVMazeAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TVMazeAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC3DFE8D1126326E3FBB4D52 /* Pods-TVMazeAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMazeAPI.debug.xcconfig"; path = "Target Support Files/Pods-TVMazeAPI/Pods-TVMazeAPI.debug.xcconfig"; sourceTree = "<group>"; };
+		D6AFE47AA904C4CAF0E27741 /* Pods-TVMazeAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMazeAPI.release.xcconfig"; path = "Target Support Files/Pods-TVMazeAPI/Pods-TVMazeAPI.release.xcconfig"; sourceTree = "<group>"; };
+		EDECA755B9D11B37026BB0D8 /* Pods-TVMazeAPI-TVMazeAPIUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMazeAPI-TVMazeAPIUITests.debug.xcconfig"; path = "Target Support Files/Pods-TVMazeAPI-TVMazeAPIUITests/Pods-TVMazeAPI-TVMazeAPIUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F2D11F45B3850FB7A431D546 /* Pods-TVMazeAPITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMazeAPITests.release.xcconfig"; path = "Target Support Files/Pods-TVMazeAPITests/Pods-TVMazeAPITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68A801C91ECB345828D05D64 /* Pods_TVMazeAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77B1B2CD8E7641811D2B6549 /* Pods_TVMazeAPITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6E261963CA191B3541EBE1D /* Pods_TVMazeAPI_TVMazeAPIUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +168,8 @@
 				3FD15CC5298437F100A63B4C /* TVMazeAPITests */,
 				3FD15CCF298437F100A63B4C /* TVMazeAPIUITests */,
 				3FD15CAD298437EF00A63B4C /* Products */,
+				4A140FBADDD636DF46ACB41D /* Pods */,
+				9BD0B64E7EFB44929FD7F3AD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -185,6 +214,7 @@
 		3FD15CDF2984389800A63B4C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				3FD15D2929846C9A00A63B4C /* Facade */,
 				3FD15D2629846BDF00A63B4C /* Extensions */,
 				3FD15CE529843A6500A63B4C /* Models */,
 				3FD15CE4298439B800A63B4C /* UI */,
@@ -230,6 +260,7 @@
 			children = (
 				3FD15CE829843AE500A63B4C /* EndpointExposable.swift */,
 				3FD15CFD2984699800A63B4C /* ViewCodable.swift */,
+				3FD15D362985ABDC00A63B4C /* ReusableView.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -237,6 +268,10 @@
 		3FD15CE4298439B800A63B4C /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				3FD15D2C2985A27C00A63B4C /* ImageLabelView.swift */,
+				3FD15D3C2985B1A700A63B4C /* LoadingView.swift */,
+				3FD15D3E2985B4C400A63B4C /* GenericErrorView.swift */,
+				3FD15D402985B55400A63B4C /* ColorPalette.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -255,11 +290,11 @@
 			isa = PBXGroup;
 			children = (
 				3FD15CEF29845F8300A63B4C /* SeriesListViewController.swift */,
-				3FD15CF129845F8C00A63B4C /* SeriesListPresenter.swift */,
-				3FD15CF329845F9400A63B4C /* SeriesListInteractor.swift */,
-				3FD15CF529845F9B00A63B4C /* SeriesListWireframe.swift */,
 				3FD15CF729845FA400A63B4C /* SeriesListEndpoint.swift */,
 				3FD15D1E29846BA000A63B4C /* SeriesListFactory.swift */,
+				3FD15D342985AA3800A63B4C /* SeriesListTableViewCell.swift */,
+				3FD15D382985AC9600A63B4C /* SeriesListViewModel.swift */,
+				3FD15D3A2985ACD800A63B4C /* SeriesDisplayModel.swift */,
 			);
 			path = SeriesList;
 			sourceTree = "<group>";
@@ -310,6 +345,37 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		3FD15D2929846C9A00A63B4C /* Facade */ = {
+			isa = PBXGroup;
+			children = (
+				3FD15D2A29846CA900A63B4C /* DependencyContainer.swift */,
+			);
+			path = Facade;
+			sourceTree = "<group>";
+		};
+		4A140FBADDD636DF46ACB41D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CC3DFE8D1126326E3FBB4D52 /* Pods-TVMazeAPI.debug.xcconfig */,
+				D6AFE47AA904C4CAF0E27741 /* Pods-TVMazeAPI.release.xcconfig */,
+				EDECA755B9D11B37026BB0D8 /* Pods-TVMazeAPI-TVMazeAPIUITests.debug.xcconfig */,
+				72BE9D27C46AA71D86CFE9C2 /* Pods-TVMazeAPI-TVMazeAPIUITests.release.xcconfig */,
+				5729B304C31EBD880E78EB88 /* Pods-TVMazeAPITests.debug.xcconfig */,
+				F2D11F45B3850FB7A431D546 /* Pods-TVMazeAPITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9BD0B64E7EFB44929FD7F3AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				74177398648CAAE7BFEEFC2D /* Pods_TVMazeAPI.framework */,
+				6A6EAE9B7E20D5E59A4850AF /* Pods_TVMazeAPI_TVMazeAPIUITests.framework */,
+				1C8E9B6418B46877123BF178 /* Pods_TVMazeAPITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -317,9 +383,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3FD15CD6298437F100A63B4C /* Build configuration list for PBXNativeTarget "TVMazeAPI" */;
 			buildPhases = (
+				5F213829FC6CC69F9F95CC07 /* [CP] Check Pods Manifest.lock */,
 				3FD15CA8298437EF00A63B4C /* Sources */,
 				3FD15CA9298437EF00A63B4C /* Frameworks */,
 				3FD15CAA298437EF00A63B4C /* Resources */,
+				02BB56C5EBE268F365021CB3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -334,6 +402,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3FD15CD9298437F100A63B4C /* Build configuration list for PBXNativeTarget "TVMazeAPITests" */;
 			buildPhases = (
+				FB4CA3C7319C447B0E4C8F26 /* [CP] Check Pods Manifest.lock */,
 				3FD15CBE298437F100A63B4C /* Sources */,
 				3FD15CBF298437F100A63B4C /* Frameworks */,
 				3FD15CC0298437F100A63B4C /* Resources */,
@@ -352,9 +421,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3FD15CDC298437F100A63B4C /* Build configuration list for PBXNativeTarget "TVMazeAPIUITests" */;
 			buildPhases = (
+				D5FB81B1A42C9F22ED328341 /* [CP] Check Pods Manifest.lock */,
 				3FD15CC8298437F100A63B4C /* Sources */,
 				3FD15CC9298437F100A63B4C /* Frameworks */,
 				3FD15CCA298437F100A63B4C /* Resources */,
+				9A6A14B31A765026DA9646C4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -390,7 +461,7 @@
 				};
 			};
 			buildConfigurationList = 3FD15CA7298437EF00A63B4C /* Build configuration list for PBXProject "TVMazeAPI" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -435,24 +506,130 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		02BB56C5EBE268F365021CB3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TVMazeAPI/Pods-TVMazeAPI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TVMazeAPI/Pods-TVMazeAPI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TVMazeAPI/Pods-TVMazeAPI-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F213829FC6CC69F9F95CC07 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TVMazeAPI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A6A14B31A765026DA9646C4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TVMazeAPI-TVMazeAPIUITests/Pods-TVMazeAPI-TVMazeAPIUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TVMazeAPI-TVMazeAPIUITests/Pods-TVMazeAPI-TVMazeAPIUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TVMazeAPI-TVMazeAPIUITests/Pods-TVMazeAPI-TVMazeAPIUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5FB81B1A42C9F22ED328341 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TVMazeAPI-TVMazeAPIUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB4CA3C7319C447B0E4C8F26 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TVMazeAPITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3FD15CA8298437EF00A63B4C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3FD15D0F29846B2900A63B4C /* SeriesSearchInteractor.swift in Sources */,
+				3FD15D3B2985ACD800A63B4C /* SeriesDisplayModel.swift in Sources */,
 				3FD15D1329846B5D00A63B4C /* SeriesDetailsViewController.swift in Sources */,
+				3FD15D352985AA3800A63B4C /* SeriesListTableViewCell.swift in Sources */,
 				3FD15D0B29846B1400A63B4C /* SeriesSearchViewController.swift in Sources */,
+				3FD15D3D2985B1A700A63B4C /* LoadingView.swift in Sources */,
 				3FD15CED29845EBF00A63B4C /* SeriesModel.swift in Sources */,
 				3FD15D2129846BBD00A63B4C /* SeriesDetailsFactory.swift in Sources */,
 				3FD15D0929846B0000A63B4C /* EpisodeDetailsWireframe.swift in Sources */,
+				3FD15D372985ABDC00A63B4C /* ReusableView.swift in Sources */,
 				3FD15D0D29846B1D00A63B4C /* SeriesSearchPresenter.swift in Sources */,
-				3FD15CF629845F9B00A63B4C /* SeriesListWireframe.swift in Sources */,
 				3FD15CB0298437EF00A63B4C /* AppDelegate.swift in Sources */,
 				3FD15CF029845F8300A63B4C /* SeriesListViewController.swift in Sources */,
-				3FD15CF229845F8C00A63B4C /* SeriesListPresenter.swift in Sources */,
 				3FD15CF829845FA400A63B4C /* SeriesListEndpoint.swift in Sources */,
 				3FD15CE729843A7500A63B4C /* API.swift in Sources */,
+				3FD15D412985B55400A63B4C /* ColorPalette.swift in Sources */,
 				3FD15CE929843AE500A63B4C /* EndpointExposable.swift in Sources */,
 				3FD15D0329846ADC00A63B4C /* EpisodeDetailsViewController.swift in Sources */,
 				3FD15CEB29843B0700A63B4C /* HTTPMethod.swift in Sources */,
@@ -460,16 +637,19 @@
 				3FD15D1729846B7100A63B4C /* SeriesDetailsInteractor.swift in Sources */,
 				3FD15D1529846B6800A63B4C /* SeriesDetailsPresenter.swift in Sources */,
 				3FD15D1B29846B8600A63B4C /* SeriesDetailsWireframe.swift in Sources */,
-				3FD15CF429845F9400A63B4C /* SeriesListInteractor.swift in Sources */,
 				3FD15D1D29846B9200A63B4C /* SeriesDetailsEndpoint.swift in Sources */,
 				3FD15D1929846B7C00A63B4C /* SeriesDetailsService.swift in Sources */,
 				3FD15D1F29846BA000A63B4C /* SeriesListFactory.swift in Sources */,
 				3FD15D0729846AF200A63B4C /* EpisodeDetailsInteractor.swift in Sources */,
 				3FD15D1129846B3500A63B4C /* SeriesSearchWireframe.swift in Sources */,
+				3FD15D3F2985B4C400A63B4C /* GenericErrorView.swift in Sources */,
 				3FD15CFE2984699800A63B4C /* ViewCodable.swift in Sources */,
 				3FD15CFC2984696700A63B4C /* ImageModel.swift in Sources */,
 				3FD15CFA2984695400A63B4C /* EpisodeModel.swift in Sources */,
 				3FD15D2829846BE900A63B4C /* UITableView.swift in Sources */,
+				3FD15D392985AC9600A63B4C /* SeriesListViewModel.swift in Sources */,
+				3FD15D2B29846CA900A63B4C /* DependencyContainer.swift in Sources */,
+				3FD15D2D2985A27C00A63B4C /* ImageLabelView.swift in Sources */,
 				3FD15D2529846BCE00A63B4C /* EpisodeDetailsFactory.swift in Sources */,
 				3FD15D2329846BC500A63B4C /* SeriesSearchFactory.swift in Sources */,
 				3FD15D0529846AE800A63B4C /* EpisodeDetailsPresenter.swift in Sources */,
@@ -636,6 +816,7 @@
 		};
 		3FD15CD7298437F100A63B4C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC3DFE8D1126326E3FBB4D52 /* Pods-TVMazeAPI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -665,6 +846,7 @@
 		};
 		3FD15CD8298437F100A63B4C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6AFE47AA904C4CAF0E27741 /* Pods-TVMazeAPI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -694,6 +876,7 @@
 		};
 		3FD15CDA298437F100A63B4C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5729B304C31EBD880E78EB88 /* Pods-TVMazeAPITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -713,6 +896,7 @@
 		};
 		3FD15CDB298437F100A63B4C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2D11F45B3850FB7A431D546 /* Pods-TVMazeAPITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -732,6 +916,7 @@
 		};
 		3FD15CDD298437F100A63B4C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDECA755B9D11B37026BB0D8 /* Pods-TVMazeAPI-TVMazeAPIUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -749,6 +934,7 @@
 		};
 		3FD15CDE298437F100A63B4C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72BE9D27C46AA71D86CFE9C2 /* Pods-TVMazeAPI-TVMazeAPIUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
