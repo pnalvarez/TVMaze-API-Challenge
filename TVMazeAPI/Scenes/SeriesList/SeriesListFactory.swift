@@ -7,6 +7,10 @@
 
 enum SeriesListFactory {
   static func build() -> SeriesListViewController {
-    SeriesListViewController(viewModel: SeriesListViewModel())
+    let coordinator = SeriesListCoordinator()
+    let viewModel = SeriesListViewModel(coordinator: coordinator)
+    let viewController = SeriesListViewController(viewModel: viewModel)
+    coordinator.viewController = viewController
+    return viewController
   }
 }

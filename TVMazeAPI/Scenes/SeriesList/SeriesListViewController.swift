@@ -23,6 +23,7 @@ final class SeriesListViewController: UIViewController {
   
   private lazy var loadingView: LoadingView = {
     let view = LoadingView()
+    view.hidesWhenStopped = true
     view.isHidden = false
     view.translatesAutoresizingMaskIntoConstraints = false
     return view
@@ -49,7 +50,7 @@ final class SeriesListViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    tabBarItem = UITabBarItem(title: "List", image: nil, tag: 0)
+    tabBarItem = UITabBarItem(title: "List", image: UIImage(systemName: "list.bullet"), tag: 0)
     setupSubscribers()
     viewModel.viewDidLoad()
   }
@@ -59,21 +60,30 @@ private extension SeriesListViewController {
   func setupSubscribers() {
     viewModel
       .loadingPublisher
-      .sink(receiveValue: { self.loadingView.isHidden = !$0 })
+      .sink(receiveValue: { [weak self] in $0 ? self?.displayLoading() : self?.stopLoading() })
       .store(in: &subscriptions)
     viewModel
       .updateUIPublisher
-      .sink(receiveValue: {
-      self.tableView.reloadData()
+      .sink(receiveValue: { [weak self] in
+      self?.tableView.reloadData()
     })
     .store(in: &subscriptions)
     viewModel
       .showErrorPublisher
-      .sink(receiveValue: {
-      self.errorView.isHidden = false
-      self.errorView.setErrorText($0)
+      .sink(receiveValue: { [weak self] in
+      self?.errorView.isHidden = false
+      self?.errorView.setErrorText($0)
     })
     .store(in: &subscriptions)
+  }
+  
+  func displayLoading() {
+    loadingView.startAnimating()
+    loadingView.isHidden = false
+  }
+  
+  func stopLoading() {
+    loadingView.stopAnimating()
   }
 }
 

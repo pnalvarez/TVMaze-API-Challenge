@@ -11,7 +11,7 @@ import Combine
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   
   var window: UIWindow?
-  var subscription: AnyCancellable?
+
   
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     guard let _ = (scene as? UIWindowScene) else { return }
@@ -19,19 +19,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       let window = UIWindow(windowScene: windowScene)
       window.makeKeyAndVisible()
       self.window = window
-      let viewController = UIViewController()
-      viewController.view.backgroundColor = .yellow
       let tabBarController = UITabBarController()
-      tabBarController.viewControllers = [SeriesListFactory.build(), UIViewController()]
+      tabBarController.viewControllers = [SeriesListFactory.build(), SeriesSearchFactory.build()]
       let navigationController = UINavigationController(rootViewController: tabBarController)
       window.rootViewController = navigationController
     }
-//    subscription = API<[SeriesModel]>().fetchData(SeriesListEndpoint.seriesList(page: 0))
-//      .sink(receiveCompletion: {
-//      print("Error \($0)")
-//    }, receiveValue: { value in
-//      print(value)
-//    })
   }
   
   func sceneDidDisconnect(_ scene: UIScene) {

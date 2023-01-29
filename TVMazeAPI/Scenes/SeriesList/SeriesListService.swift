@@ -15,7 +15,7 @@ protocol SeriesListServicing {
 final class SeriesListService: SeriesListServicing {
   func fetchSeries(page: Int) -> AnyPublisher<[SeriesModel], Error> {
     API<[SeriesModel]>()
-      .fetchData(SeriesListEndpoint.seriesList(page: page))
+      .fetchData(SeriesEndpoint.seriesList(page: page))
       .receive(on: DispatchQueue.main)
       .eraseToAnyPublisher()
   }

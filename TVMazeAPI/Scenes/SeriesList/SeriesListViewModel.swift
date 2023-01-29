@@ -47,9 +47,12 @@ final class SeriesListViewModel: SeriesListViewModelable {
   private var isFetching: Bool = false
   
   private let service: SeriesListServicing
+  private let coordinator: SeriesListCoordinating
   
-  init(service: SeriesListServicing = SeriesListService()) {
+  init(service: SeriesListServicing = SeriesListService(),
+       coordinator: SeriesListCoordinating) {
     self.service = service
+    self.coordinator = coordinator
   }
   
   func viewDidLoad() {
@@ -58,7 +61,7 @@ final class SeriesListViewModel: SeriesListViewModelable {
   }
   
   func didClickCell(_ index: Int) {
-    
+    coordinator.navigateTo(.details(series[index].id))
   }
   
   func willDisplayCells(_ indexes: [Int]) {
@@ -73,7 +76,9 @@ final class SeriesListViewModel: SeriesListViewModelable {
     service
       .fetchSeries(page: currentPage)
       .map({ value in
-        value.map({ SeriesDisplayModel(imageURL: URL(string: $0.image.medium), title: $0.name)})
+        value.map({ SeriesDisplayModel(id: $0.id,
+                                       imageURL: URL(string: $0.image.medium),
+                                       title: $0.name)})
       })
       .scan(series, appendSeries)
       .sink(receiveCompletion: { [weak self] result in

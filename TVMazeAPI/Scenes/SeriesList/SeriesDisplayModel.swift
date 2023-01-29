@@ -8,6 +8,7 @@
 import Foundation
 
 struct SeriesDisplayModel {
+  let id: Int
   let imageURL: URL?
   let title: String
 }

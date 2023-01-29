@@ -10,8 +10,9 @@ import UIKit
 final class LoadingView: UIActivityIndicatorView {
   override init(frame: CGRect = .zero) {
     super.init(frame: frame)
-    backgroundColor = .blue
-    tintColor = .white
+    backgroundColor = .white
+    tintColor = .blue
+    color = .systemBlue
     hidesWhenStopped = true
   }
   

@@ -5,4 +5,8 @@
 //  Created by Pedro Alvarez on 27/01/23.
 //
 
-import Foundation
+enum SeriesSearchFactory {
+  static func build() -> SeriesSearchViewController {
+    SeriesSearchViewController(viewModel: SeriesSearchViewModel())
+  }
+}
