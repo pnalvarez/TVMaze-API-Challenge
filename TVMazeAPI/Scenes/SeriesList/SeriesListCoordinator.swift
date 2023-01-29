@@ -19,7 +19,8 @@ final class SeriesListCoordinator: SeriesListCoordinating {
   weak var viewController: UIViewController?
   
   private func navigateToDetails(_ id: Int) {
-    // TO DO
+    let detailsController = SeriesDetailsFactory.build(id)
+    viewController?.navigationController?.pushViewController(detailsController, animated: true)
   }
   
   func navigateTo(_ item: SeriesListNavigationItem) {

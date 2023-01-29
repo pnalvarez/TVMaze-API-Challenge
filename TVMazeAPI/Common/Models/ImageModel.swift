@@ -7,4 +7,5 @@
 
 struct ImageModel: Decodable {
   let medium: String
+  let original: String
 }
