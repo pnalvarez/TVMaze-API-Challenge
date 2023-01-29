@@ -5,4 +5,8 @@
 //  Created by Pedro Alvarez on 27/01/23.
 //
 
-import Foundation
+enum EpisodeDetailsFactory {
+  static func build(_ episode: EpisodeModel) -> EpisodeDetailsViewController {
+    EpisodeDetailsViewController(viewModel: EpisodeDetailsViewModel(episodeModel: episode))
+  }
+}

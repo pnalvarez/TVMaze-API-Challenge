@@ -19,10 +19,14 @@ final class SeriesDetailsCoordinator: SeriesDetailsCoordinating {
   weak var viewController: UIViewController?
   
   private func navigateToEpisodeDetails(_ model: EpisodeModel) {
-    // TO DO
+    let episodeController = EpisodeDetailsFactory.build(model)
+    viewController?.navigationController?.pushViewController(episodeController, animated: true)
   }
   
   func navigateTo(_ navigationItem: SeriesDetailsNavigationItem) {
-    // TO DO
+    switch navigationItem {
+    case let .episodeDetails(model):
+      navigateToEpisodeDetails(model)
+    }
   }
 }

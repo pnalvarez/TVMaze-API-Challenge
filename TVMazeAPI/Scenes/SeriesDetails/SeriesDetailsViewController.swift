@@ -9,6 +9,15 @@ import UIKit
 import Combine
 
 final class SeriesDetailsViewController: UIViewController {
+  private enum Constants {
+    static let imageTop: CGFloat = 16
+    static let nameLabelTop: CGFloat = 32
+    static let labelLeading: CGFloat = 16
+    static let labelTrailing: CGFloat = -16
+    static let seasonsTop: CGFloat = 32
+    static let stackSpacing: CGFloat = 16
+    static let labelSpacing: CGFloat = 8
+  }
   private lazy var scrollView: UIScrollView = {
     let scrollView = UIScrollView()
     scrollView.bounces = false
@@ -59,7 +68,7 @@ final class SeriesDetailsViewController: UIViewController {
   
   private lazy var seasonStackView: UIStackView = {
     let stack = UIStackView()
-    stack.spacing = 16
+    stack.spacing = Constants.stackSpacing
     stack.axis = .vertical
     stack.translatesAutoresizingMaskIntoConstraints = false
     return stack
@@ -168,26 +177,26 @@ extension SeriesDetailsViewController: ViewCodable {
       contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
       contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
 
-      posterImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+      posterImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.imageTop),
       posterImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
 
-      nameLabel.topAnchor.constraint(equalTo: posterImageView.bottomAnchor, constant: 32),
-      nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-      nameLabel.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: -16),
+      nameLabel.topAnchor.constraint(equalTo: posterImageView.bottomAnchor, constant: Constants.nameLabelTop),
+      nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.labelLeading),
+      nameLabel.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: Constants.labelTrailing),
 
-      summaryLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 4),
-      summaryLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-      summaryLabel.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: -16),
+      summaryLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: Constants.labelSpacing),
+      summaryLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.labelLeading),
+      summaryLabel.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: Constants.labelTrailing),
 
-      genresLabel.topAnchor.constraint(equalTo: summaryLabel.bottomAnchor, constant: 4),
-      genresLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-      genresLabel.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: -16),
+      genresLabel.topAnchor.constraint(equalTo: summaryLabel.bottomAnchor, constant: Constants.labelSpacing),
+      genresLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.labelLeading),
+      genresLabel.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: Constants.labelTrailing),
 
-      scheduleLabel.topAnchor.constraint(equalTo: genresLabel.bottomAnchor, constant: 4),
-      scheduleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-      scheduleLabel.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: -16),
+      scheduleLabel.topAnchor.constraint(equalTo: genresLabel.bottomAnchor, constant: Constants.labelSpacing),
+      scheduleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.labelLeading),
+      scheduleLabel.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: Constants.labelTrailing),
 
-      seasonStackView.topAnchor.constraint(equalTo: scheduleLabel.bottomAnchor, constant: 32),
+      seasonStackView.topAnchor.constraint(equalTo: scheduleLabel.bottomAnchor, constant: Constants.seasonsTop),
       seasonStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
       seasonStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
       seasonStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
