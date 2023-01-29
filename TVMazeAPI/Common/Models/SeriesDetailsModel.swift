@@ -12,6 +12,11 @@ struct SeriesDetailsModel: Decodable {
   let schedule: ScheduleModel
   let genres: [String]
   let summary: String
+  let _embedded: EmbeddedEpisodeModel
+}
+
+struct EmbeddedEpisodeModel: Decodable {
+  let episodes: [EpisodeModel]
 }
 
 struct ScheduleModel: Decodable {
