@@ -58,12 +58,12 @@ final class FavoriteSeriesTableViewCell: UITableViewCell {
 }
 
 extension FavoriteSeriesTableViewCell: ViewCodable {
-  public func buildViewHierarchy() {
+  func buildViewHierarchy() {
     addSubview(posterImageView)
     addSubview(titleLabel)
   }
   
-  public func setupConstraints() {
+  func setupConstraints() {
     NSLayoutConstraint.activate([
       posterImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.imageLeading),
       posterImageView.topAnchor.constraint(equalTo: topAnchor, constant: Constants.imageTop),

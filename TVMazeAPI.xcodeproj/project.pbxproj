@@ -14,6 +14,9 @@
 		3F7E582E29873AA5006C5B70 /* FavoriteSeriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7E582D29873AA5006C5B70 /* FavoriteSeriesViewModel.swift */; };
 		3F7E583029873AAE006C5B70 /* FavoriteSeriesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7E582F29873AAE006C5B70 /* FavoriteSeriesFactory.swift */; };
 		3F7E583229873AF8006C5B70 /* FavoriteSeriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7E583129873AF8006C5B70 /* FavoriteSeriesTableViewCell.swift */; };
+		3F7E583429874CFF006C5B70 /* FavoriteSeriesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7E583329874CFF006C5B70 /* FavoriteSeriesCoordinator.swift */; };
+		3F7E583629875128006C5B70 /* OptionsToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7E583529875128006C5B70 /* OptionsToolbar.swift */; };
+		3F7E58382987518C006C5B70 /* OptionsToolbarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7E58372987518C006C5B70 /* OptionsToolbarCollectionViewCell.swift */; };
 		3FD15CB0298437EF00A63B4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD15CAF298437EF00A63B4C /* AppDelegate.swift */; };
 		3FD15CB2298437EF00A63B4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD15CB1298437EF00A63B4C /* SceneDelegate.swift */; };
 		3FD15CB9298437F100A63B4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FD15CB8298437F100A63B4C /* Assets.xcassets */; };
@@ -95,6 +98,9 @@
 		3F7E582D29873AA5006C5B70 /* FavoriteSeriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSeriesViewModel.swift; sourceTree = "<group>"; };
 		3F7E582F29873AAE006C5B70 /* FavoriteSeriesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSeriesFactory.swift; sourceTree = "<group>"; };
 		3F7E583129873AF8006C5B70 /* FavoriteSeriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSeriesTableViewCell.swift; sourceTree = "<group>"; };
+		3F7E583329874CFF006C5B70 /* FavoriteSeriesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSeriesCoordinator.swift; sourceTree = "<group>"; };
+		3F7E583529875128006C5B70 /* OptionsToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsToolbar.swift; sourceTree = "<group>"; };
+		3F7E58372987518C006C5B70 /* OptionsToolbarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsToolbarCollectionViewCell.swift; sourceTree = "<group>"; };
 		3FD15CAC298437EF00A63B4C /* TVMazeAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVMazeAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FD15CAF298437EF00A63B4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FD15CB1298437EF00A63B4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +200,7 @@
 				3F7E582D29873AA5006C5B70 /* FavoriteSeriesViewModel.swift */,
 				3F7E582F29873AAE006C5B70 /* FavoriteSeriesFactory.swift */,
 				3F7E583129873AF8006C5B70 /* FavoriteSeriesTableViewCell.swift */,
+				3F7E583329874CFF006C5B70 /* FavoriteSeriesCoordinator.swift */,
 			);
 			path = FavoriteSeries;
 			sourceTree = "<group>";
@@ -312,6 +319,8 @@
 				3FD15D3E2985B4C400A63B4C /* GenericErrorView.swift */,
 				3FD15D402985B55400A63B4C /* ColorPalette.swift */,
 				3FD15D5C2985EE0800A63B4C /* ImageNameVerticalView.swift */,
+				3F7E583529875128006C5B70 /* OptionsToolbar.swift */,
+				3F7E58372987518C006C5B70 /* OptionsToolbarCollectionViewCell.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -690,8 +699,10 @@
 				3FD15D512985E00200A63B4C /* SeriesDetailsModel.swift in Sources */,
 				3FD15CB0298437EF00A63B4C /* AppDelegate.swift in Sources */,
 				3FD15CF029845F8300A63B4C /* SeriesListViewController.swift in Sources */,
+				3F7E58382987518C006C5B70 /* OptionsToolbarCollectionViewCell.swift in Sources */,
 				3FD15CF829845FA400A63B4C /* SeriesEndpoint.swift in Sources */,
 				3F7E582529871CDC006C5B70 /* EpisodeDetailsViewModel.swift in Sources */,
+				3F7E583429874CFF006C5B70 /* FavoriteSeriesCoordinator.swift in Sources */,
 				3FD15CE729843A7500A63B4C /* API.swift in Sources */,
 				3F7E582E29873AA5006C5B70 /* FavoriteSeriesViewModel.swift in Sources */,
 				3FD15D412985B55400A63B4C /* ColorPalette.swift in Sources */,
@@ -714,6 +725,7 @@
 				3FD15CFE2984699800A63B4C /* ViewCodable.swift in Sources */,
 				3FD15CFC2984696700A63B4C /* ImageModel.swift in Sources */,
 				3FD15CFA2984695400A63B4C /* EpisodeModel.swift in Sources */,
+				3F7E583629875128006C5B70 /* OptionsToolbar.swift in Sources */,
 				3FD15D2829846BE900A63B4C /* UITableView.swift in Sources */,
 				3FD15D392985AC9600A63B4C /* SeriesListViewModel.swift in Sources */,
 				3FD15D482985BF1600A63B4C /* SeriesListService.swift in Sources */,

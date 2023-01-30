@@ -7,6 +7,10 @@
 
 enum FavoriteSeriesFactory {
   static func build() -> FavoriteSeriesViewController {
-    FavoriteSeriesViewController(viewModel: FavoriteSeriesViewModel())
+    let coordinator = FavoriteSeriesCoordinator()
+    let viewModel = FavoriteSeriesViewModel(coordinator: coordinator)
+    let viewController = FavoriteSeriesViewController(viewModel: viewModel)
+    coordinator.viewController = viewController
+    return viewController
   }
 }

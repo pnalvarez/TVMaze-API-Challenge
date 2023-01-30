@@ -9,6 +9,14 @@ import Combine
 import UIKit
 
 final class FavoriteSeriesViewController: UIViewController {
+  private lazy var toolBar: OptionsToolbar = {
+    let toolBar = OptionsToolbar()
+    toolBar.setupToolbarLayout(optionNames: ["Id", "Alphabetically"])
+    toolBar.delegate = self
+    toolBar.translatesAutoresizingMaskIntoConstraints = false
+    return toolBar
+  }()
+  
   private lazy var tableView: UITableView = {
     let tableView = UITableView()
     tableView.delegate = self
@@ -42,7 +50,7 @@ final class FavoriteSeriesViewController: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    tableView.reloadData()
+    viewModel.fetchFavorite()
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -80,6 +88,12 @@ final class FavoriteSeriesViewController: UIViewController {
   }
 }
 
+extension FavoriteSeriesViewController: OptionsToolbarDelegate {
+  func optionsToolbar(selectedButton index: Int, optionsToolbar: OptionsToolbar) {
+    viewModel.didSelectSortCriteria(index)
+  }
+}
+
 extension FavoriteSeriesViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     viewModel.favoriteSeries.count
@@ -98,16 +112,25 @@ extension FavoriteSeriesViewController: UITableViewDelegate, UITableViewDataSour
       presentDeleteConfirmation()
     }
   }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    viewModel.didSelectSeries(index: indexPath.row)
+  }
 }
 
 extension FavoriteSeriesViewController: ViewCodable {
   func buildViewHierarchy() {
+    view.addSubview(toolBar)
     view.addSubview(tableView)
   }
   
   func setupConstraints() {
     NSLayoutConstraint.activate([
-      tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+      toolBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+      toolBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      toolBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+    
+      tableView.topAnchor.constraint(equalTo: toolBar.bottomAnchor),
       tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
       tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
       tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),

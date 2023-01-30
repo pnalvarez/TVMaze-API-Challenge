@@ -59,12 +59,12 @@ final class ImageLabelView: UIView {
 }
 
 extension ImageLabelView: ViewCodable {
-  public func buildViewHierarchy() {
+  func buildViewHierarchy() {
     addSubview(imageView)
     addSubview(titleLabel)
   }
   
-  public func setupConstraints() {
+  func setupConstraints() {
     NSLayoutConstraint.activate([
       imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.imageLeading),
       imageView.topAnchor.constraint(equalTo: topAnchor, constant: Constants.imageTop),
