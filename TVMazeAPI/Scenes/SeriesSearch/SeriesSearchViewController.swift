@@ -57,6 +57,13 @@ final class SeriesSearchViewController: UIViewController {
     return view
   }()
   
+  private lazy var errorView: GenericErrorView = {
+    let view = GenericErrorView()
+    view.isHidden = true
+    view.translatesAutoresizingMaskIntoConstraints = false
+    return view
+  }()
+  
   private let viewModel: SeriesSearchViewModelable
   
   private var subscriptions: Set<AnyCancellable> = .init()
@@ -82,6 +89,7 @@ final class SeriesSearchViewController: UIViewController {
 private extension SeriesSearchViewController {
   @objc func didTapSearch() {
     detailsView.isHidden = true
+    errorView.isHidden = true
     viewModel.didTapSearch(textField.text ?? "")
   }
   
@@ -109,6 +117,13 @@ private extension SeriesSearchViewController {
         self?.setSearchButtonEnabled($0)
     })
       .store(in: &subscriptions)
+    viewModel
+      .errorPublisher
+      .sink(receiveValue: { [weak self] in
+        self?.errorView.isHidden = false
+        self?.errorView.setErrorText($0)
+    })
+      .store(in: &subscriptions)
   }
   
   func displayLoading() {
@@ -132,6 +147,7 @@ extension SeriesSearchViewController: ViewCodable {
     view.addSubview(searchButton)
     view.addSubview(detailsView)
     view.addSubview(loadingView)
+    view.addSubview(errorView)
   }
   
   func setupConstraints() {
@@ -154,6 +170,11 @@ extension SeriesSearchViewController: ViewCodable {
       loadingView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
       loadingView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
       loadingView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+      
+      errorView.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 64),
+      errorView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      errorView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+      errorView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
     ])
   }
 }

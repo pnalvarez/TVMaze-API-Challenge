@@ -18,6 +18,10 @@ protocol SeriesSearchViewModelable {
 }
 
 final class SeriesSearchViewModel: SeriesSearchViewModelable {
+  private enum Strings {
+    static let seriesNotFound = "No Series was found with this name"
+  }
+  
   var seriesItemPublisher: AnyPublisher<SeriesDisplayModel, Never> {
     seriesItemSubject.eraseToAnyPublisher()
   }
@@ -58,8 +62,8 @@ final class SeriesSearchViewModel: SeriesSearchViewModelable {
       .map(convertToDisplayModel)
       .sink(receiveCompletion: { [weak self] in
         self?.loadingSubject.send(false)
-        if case let .failure(error) = $0 {
-          self?.errorSubject.send(error.localizedDescription)
+        if case .failure = $0 {
+          self?.errorSubject.send(Strings.seriesNotFound)
         }
       }, receiveValue: { [weak self] in
         self?.loadingSubject.send(false)

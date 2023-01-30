@@ -12,6 +12,7 @@ final class GenericErrorView: UIView {
   private enum Constants {
     static let title = "An error occurred"
     static let stackSpacing: CGFloat = 16
+    static let centerOffset: CGFloat = -64
   }
   
   // MARK: - UI properties
@@ -43,6 +44,7 @@ final class GenericErrorView: UIView {
     let stack = UIStackView()
     stack.axis = .vertical
     stack.spacing = Constants.stackSpacing
+    stack.alignment = .center
     stack.translatesAutoresizingMaskIntoConstraints = false
     return stack
   }()
@@ -71,7 +73,7 @@ extension GenericErrorView: ViewCodable {
   
   func setupConstraints() {
     NSLayoutConstraint.activate([
-      stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
+      stackView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: Constants.centerOffset),
       stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
     ])
   }

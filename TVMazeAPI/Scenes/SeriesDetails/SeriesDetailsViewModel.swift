@@ -12,13 +12,20 @@ protocol SeriesDetailsViewModelable {
   var loadingPublisher: AnyPublisher<Bool, Never> { get }
   var dataPublisher: AnyPublisher<SeriesDetailsDisplayModel, Never> { get }
   var errorPublisher: AnyPublisher<String, Never> { get }
+  var isFavoritePublisher: AnyPublisher<Void, Never> { get }
+  var buttonTitle: String { get }
   func viewDidLoad()
   func didClickEpisode(_ season: Int, _ number: Int)
+  func didTapFavoriteButton()
 }
 
 final class SeriesDetailsViewModel: SeriesDetailsViewModelable {
+  typealias Dependencies = HasPersistencyManager
+  
   private enum Strings {
     static let episodeError = "It was not possible to fetch episode details"
+    static let favoriteTitle = "Set as favorite"
+    static let unfavorite = "Unfavorite"
   }
   var loadingPublisher: AnyPublisher<Bool, Never> {
     loadingSubject.eraseToAnyPublisher()
@@ -32,39 +39,58 @@ final class SeriesDetailsViewModel: SeriesDetailsViewModelable {
     errorSubject.eraseToAnyPublisher()
   }
   
+  var isFavoritePublisher: AnyPublisher<Void, Never> {
+    isFavoriteSubject.eraseToAnyPublisher()
+  }
+  
+  var buttonTitle: String {
+    isFavorite ? Strings.unfavorite : Strings.favoriteTitle
+  }
+  
   private lazy var loadingSubject: PassthroughSubject<Bool, Never> = .init()
   private lazy var dataSubject: PassthroughSubject<SeriesDetailsDisplayModel, Never> = .init()
   private lazy var errorSubject: PassthroughSubject<String, Never> = .init()
+  private lazy var isFavoriteSubject: PassthroughSubject<Void, Never> = .init()
   
   private var seasonsList: EpisodeListDisplayModel?
   private var subscriptions: Set<AnyCancellable> = .init()
+  private var seriesModel: SeriesModel?
+  
+  private(set) var isFavorite: Bool = false
   
   private let id: Int
   private let service: SeriesDetailsServicing
   private let coordinator: SeriesDetailsCoordinating
+  private let dependencies: Dependencies
   
   init(id: Int,
        service: SeriesDetailsServicing = SeriesDetailsService(),
-       coordinator: SeriesDetailsCoordinating) {
+       coordinator: SeriesDetailsCoordinating,
+       dependencies: Dependencies = DependencyContainer()) {
     self.id = id
     self.service = service
     self.coordinator = coordinator
+    self.dependencies = dependencies
   }
   
   func viewDidLoad() {
+    isFavorite = dependencies.persistencyManager.isFavorite(id: id)
+    isFavoriteSubject.send()
     loadingSubject.send(true)
     service
       .fetchSeriesDetails(id)
-      .map(convertModelToDisplay)
       .sink(receiveCompletion: { [weak self] in
         self?.loadingSubject.send(false)
         if case let .failure(error) = $0 {
           self?.errorSubject.send(error.localizedDescription)
         }
       }, receiveValue: { [weak self] in
-        self?.loadingSubject.send(false)
-        self?.seasonsList = $0.seasons
-        self?.dataSubject.send($0)
+        guard let strongSelf = self else { return }
+        strongSelf.seriesModel = SeriesModel(id: $0.id, name: $0.name, image: $0.image)
+        let displayModel = strongSelf.convertModelToDisplay($0)
+        strongSelf.loadingSubject.send(false)
+        strongSelf.seasonsList = displayModel.seasons
+        strongSelf.dataSubject.send(displayModel)
       })
       .store(in: &subscriptions)
   }
@@ -75,6 +101,13 @@ final class SeriesDetailsViewModel: SeriesDetailsViewModelable {
       return
     }
     coordinator.navigateTo(.episodeDetails(episode))
+  }
+  
+  func didTapFavoriteButton() {
+    guard let seriesModel else { return }
+    isFavorite ? dependencies.persistencyManager.removeFromFavorite(withId: seriesModel.id) : dependencies.persistencyManager.saveAsFavorite(seriesModel)
+    isFavorite.toggle()
+    isFavoriteSubject.send()
   }
   
   private func convertModelToDisplay(_ model: SeriesDetailsModel) -> SeriesDetailsDisplayModel {

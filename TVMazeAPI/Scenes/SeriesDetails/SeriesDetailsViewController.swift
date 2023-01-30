@@ -17,6 +17,9 @@ final class SeriesDetailsViewController: UIViewController {
     static let seasonsTop: CGFloat = 32
     static let stackSpacing: CGFloat = 16
     static let labelSpacing: CGFloat = 8
+    static let buttonHeight: CGFloat = 64
+    static let buttonWidth: CGFloat = 120
+    static let buttonTop: CGFloat = 32
   }
   private lazy var scrollView: UIScrollView = {
     let scrollView = UIScrollView()
@@ -82,6 +85,23 @@ final class SeriesDetailsViewController: UIViewController {
     return view
   }()
   
+  private lazy var errorView: GenericErrorView = {
+    let view = GenericErrorView()
+    view.isHidden = true
+    view.translatesAutoresizingMaskIntoConstraints = false
+    return view
+  }()
+  
+  private lazy var favoriteButton: UIButton =  {
+    let button = UIButton()
+    button.setTitleColor(.white, for: .normal)
+    button.layer.cornerRadius = 8
+    button.backgroundColor = ColorPalette.primaryBlue
+    button.translatesAutoresizingMaskIntoConstraints = false
+    button.addTarget(self, action: #selector(didTapFavorite), for: .touchUpInside)
+    return button
+  }()
+  
   private let viewModel: SeriesDetailsViewModelable
   
   private var subscriptions: Set<AnyCancellable> = .init()
@@ -116,6 +136,20 @@ final class SeriesDetailsViewController: UIViewController {
         self?.updateUI($0)
     })
       .store(in: &subscriptions)
+    viewModel
+      .errorPublisher
+      .sink(receiveValue: { [weak self] in
+        self?.errorView.isHidden = false
+        self?.errorView.setErrorText($0)
+    })
+      .store(in: &subscriptions)
+    viewModel
+      .isFavoritePublisher
+      .sink(receiveValue: { [weak self] in
+        guard let self else { return }
+        self.favoriteButton.setTitle(self.viewModel.buttonTitle, for: .normal)
+      })
+      .store(in: &subscriptions)
   }
   
   private func enableLoading() {
@@ -143,6 +177,10 @@ final class SeriesDetailsViewController: UIViewController {
       seasonStackView.addArrangedSubview(seasonView)
     }
   }
+  
+  @objc private func didTapFavorite() {
+    viewModel.didTapFavoriteButton()
+  }
 }
 
 extension SeriesDetailsViewController: SeriesSeasonViewDelegate {
@@ -155,12 +193,14 @@ extension SeriesDetailsViewController: ViewCodable {
   func buildViewHierarchy() {
     view.addSubview(scrollView)
     view.addSubview(loadingView)
+    view.addSubview(errorView)
     scrollView.addSubview(contentView)
     contentView.addSubview(posterImageView)
     contentView.addSubview(nameLabel)
     contentView.addSubview(summaryLabel)
     contentView.addSubview(scheduleLabel)
     contentView.addSubview(genresLabel)
+    contentView.addSubview(favoriteButton)
     contentView.addSubview(seasonStackView)
   }
   
@@ -195,8 +235,13 @@ extension SeriesDetailsViewController: ViewCodable {
       scheduleLabel.topAnchor.constraint(equalTo: genresLabel.bottomAnchor, constant: Constants.labelSpacing),
       scheduleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.labelLeading),
       scheduleLabel.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: Constants.labelTrailing),
+      
+      favoriteButton.topAnchor.constraint(equalTo: scheduleLabel.bottomAnchor, constant: Constants.buttonTop),
+      favoriteButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+      favoriteButton.heightAnchor.constraint(equalToConstant: Constants.buttonHeight),
+      favoriteButton.widthAnchor.constraint(equalToConstant: Constants.buttonWidth),
 
-      seasonStackView.topAnchor.constraint(equalTo: scheduleLabel.bottomAnchor, constant: Constants.seasonsTop),
+      seasonStackView.topAnchor.constraint(equalTo: favoriteButton.bottomAnchor, constant: Constants.seasonsTop),
       seasonStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
       seasonStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
       seasonStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
@@ -205,6 +250,11 @@ extension SeriesDetailsViewController: ViewCodable {
       loadingView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
       loadingView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
       loadingView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+      
+      errorView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+      errorView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      errorView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+      errorView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
     ])
   }
 }

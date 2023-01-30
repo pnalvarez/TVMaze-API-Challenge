@@ -14,9 +14,137 @@
             filePath = "TVMazeAPI/Scenes/SeriesDetails/SeriesDetailsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "didClickEpisode(_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "89FC64AF-54D1-4F74-A82A-7C1B647254D0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TVMazeAPI/Common/Utils/PersistencyManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "saveAsFavorite(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "89FC64AF-54D1-4F74-A82A-7C1B647254D0 - 4723b9e673290e53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TVMazeAPI.PersistencyManager.saveAsFavorite(TVMazeAPI.SeriesModel) -&gt; ()"
+                  moduleName = "TVMazeAPI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pedroalvarez/Desktop/iOS/TVMazeAPI/TVMazeAPI/Common/Utils/PersistencyManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "192">
+               </Location>
+               <Location
+                  uuid = "89FC64AF-54D1-4F74-A82A-7C1B647254D0 - 4723b9e673290e53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TVMazeAPI.PersistencyManager.saveAsFavorite(TVMazeAPI.SeriesModel) -&gt; ()"
+                  moduleName = "TVMazeAPI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pedroalvarez/Desktop/iOS/TVMazeAPI/TVMazeAPI/Common/Utils/PersistencyManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "592">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E140EFB0-1DD1-41EF-B480-999A5594D6C8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TVMazeAPI/Common/Utils/PersistencyManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "removeFromFavorite(withId:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E140EFB0-1DD1-41EF-B480-999A5594D6C8 - cb7e413f8349dc8a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TVMazeAPI.PersistencyManager.removeFromFavorite(withId: Swift.Int) -&gt; ()"
+                  moduleName = "TVMazeAPI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pedroalvarez/Desktop/iOS/TVMazeAPI/TVMazeAPI/Common/Utils/PersistencyManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "E140EFB0-1DD1-41EF-B480-999A5594D6C8 - cb7e413f8349dc8a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TVMazeAPI.PersistencyManager.removeFromFavorite(withId: Swift.Int) -&gt; ()"
+                  moduleName = "TVMazeAPI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pedroalvarez/Desktop/iOS/TVMazeAPI/TVMazeAPI/Common/Utils/PersistencyManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "568">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8742D7EB-C4E3-4DAC-A6E1-966A62A6F0A3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TVMazeAPI/Scenes/SeriesDetails/SeriesDetailsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "didTapFavoriteButton()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0C986300-E78D-4ED2-90DA-687820B9244F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TVMazeAPI/Common/Utils/PersistencyManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "saveAsFavorite(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

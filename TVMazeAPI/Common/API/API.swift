@@ -19,7 +19,15 @@ enum APIError: Error {
 }
 
 final class API<T: Decodable>: APIProtocol {
+  typealias Dependencies = HasDecoder
+  
   private let basePath = "https://api.tvmaze.com"
+  
+  private let dependencies: Dependencies
+  
+  init(dependencies: Dependencies = DependencyContainer()) {
+    self.dependencies = dependencies
+  }
   
   private func makeExtraHeaders(from endpoint: EndpointExposable) -> String? {
     var headerString = "?"
@@ -51,7 +59,7 @@ final class API<T: Decodable>: APIProtocol {
         APIError.genericError($0.localizedDescription)
       })
       .map(\.data)
-      .decode(type: T.self, decoder: JSONDecoder())
+      .decode(type: T.self, decoder: dependencies.jsonDecoder)
       .handleEvents(receiveOutput: { print("Received output: \($0)")})
       .eraseToAnyPublisher()
   }

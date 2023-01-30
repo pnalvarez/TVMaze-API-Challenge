@@ -1,14 +1,13 @@
-
-//  ImageLabelView.swift
+//
+//  FavoriteSeriesTableViewCell.swift
 //  TVMazeAPI
 //
-//  Created by Pedro Alvarez on 28/01/23.
+//  Created by Pedro Alvarez on 29/01/23.
 //
 
 import UIKit
-import SDWebImage
 
-final class ImageLabelView: UIView {
+final class FavoriteSeriesTableViewCell: UITableViewCell {
   // MARK: - ViewModel
   struct ViewModel {
     let imageURL: URL?
@@ -27,7 +26,7 @@ final class ImageLabelView: UIView {
   }
   
   // MARK: - UI Properties
-  private lazy var imageView: UIImageView = {
+  private lazy var posterImageView: UIImageView = {
     let imageView = UIImageView()
     imageView.contentMode = .scaleAspectFit
     imageView.layer.cornerRadius = Constants.imageRadius
@@ -43,8 +42,8 @@ final class ImageLabelView: UIView {
     return label
   }()
   
-  override init(frame: CGRect) {
-    super.init(frame: frame)
+  override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    super.init(style: style, reuseIdentifier: reuseIdentifier)
     buildView()
   }
   
@@ -53,26 +52,26 @@ final class ImageLabelView: UIView {
   }
   
   func updateContent(_ viewModel: ViewModel) {
-    imageView.sd_setImage(with: viewModel.imageURL)
+    posterImageView.sd_setImage(with: viewModel.imageURL)
     titleLabel.text = viewModel.title
   }
 }
 
-extension ImageLabelView: ViewCodable {
+extension FavoriteSeriesTableViewCell: ViewCodable {
   public func buildViewHierarchy() {
-    addSubview(imageView)
+    addSubview(posterImageView)
     addSubview(titleLabel)
   }
   
   public func setupConstraints() {
     NSLayoutConstraint.activate([
-      imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.imageLeading),
-      imageView.topAnchor.constraint(equalTo: topAnchor, constant: Constants.imageTop),
-      imageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: Constants.imageBottom),
-      imageView.heightAnchor.constraint(equalToConstant: Constants.imageHeight),
-      imageView.widthAnchor.constraint(equalToConstant: Constants.imageWidth),
-      titleLabel.centerYAnchor.constraint(equalTo: imageView.centerYAnchor),
-      titleLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: Constants.labelLeading),
+      posterImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.imageLeading),
+      posterImageView.topAnchor.constraint(equalTo: topAnchor, constant: Constants.imageTop),
+      posterImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: Constants.imageBottom),
+      posterImageView.heightAnchor.constraint(equalToConstant: Constants.imageHeight),
+      posterImageView.widthAnchor.constraint(equalToConstant: Constants.imageWidth),
+      titleLabel.centerYAnchor.constraint(equalTo: posterImageView.centerYAnchor),
+      titleLabel.leadingAnchor.constraint(equalTo: posterImageView.trailingAnchor, constant: Constants.labelLeading),
     ])
   }
 }
