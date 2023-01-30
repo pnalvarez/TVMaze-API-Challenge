@@ -52,7 +52,7 @@ final class FavoriteSeriesTableViewCell: UITableViewCell {
   }
   
   func updateContent(_ viewModel: ViewModel) {
-    posterImageView.sd_setImage(with: viewModel.imageURL)
+    posterImageView.sd_setImage(with: viewModel.imageURL, placeholderImage: UIImage(named: "loading-image"))
     titleLabel.text = viewModel.title
   }
 }

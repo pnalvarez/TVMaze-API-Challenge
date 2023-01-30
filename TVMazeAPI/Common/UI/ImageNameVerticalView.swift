@@ -41,7 +41,7 @@ final class ImageNameVerticalView: UIView {
   }
   
   func setContent(_ viewModel: SeriesDisplayModel) {
-    imageView.sd_setImage(with: viewModel.imageURL)
+    imageView.sd_setImage(with: viewModel.imageURL, placeholderImage: UIImage(named: "loading-image"))
     titleLabel.text = viewModel.title
   }
   

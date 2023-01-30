@@ -53,7 +53,7 @@ final class ImageLabelView: UIView {
   }
   
   func updateContent(_ viewModel: ViewModel) {
-    imageView.sd_setImage(with: viewModel.imageURL)
+    imageView.sd_setImage(with: viewModel.imageURL, placeholderImage: UIImage(named: "loading-image"))
     titleLabel.text = viewModel.title
   }
 }

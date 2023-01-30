@@ -42,7 +42,7 @@ final class SeriesDetailsEpisodeCollectionViewCell: UICollectionViewCell {
   }
   
   func setContent(_ url: URL?, _ title: String) {
-    posterImageView.sd_setImage(with: url)
+    posterImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "loading-image"))
     titleLabel.text = title
   }
 }

@@ -140,9 +140,9 @@ final class SeriesDetailsViewModel: SeriesDetailsViewModelable {
     let details = SeriesDetailsDisplayModel(id: model.id,
                                             name: "Name: \(model.name)",
                                             image: URL(string: model.image.medium),
-                                            schedule: "Schedule: Aired \(model.schedule.days.joined(separator: ",")) at \(model.schedule.time)",
-                                            genres: "Genres: \(model.genres.joined(separator: ","))",
-                                            summary: "Summary \(model.summary)",
+                                            schedule: "Schedule: Aired \(model.schedule.days.joined(separator: " , ")) at \(model.schedule.time)",
+                                            genres: "Genres: \(model.genres.joined(separator: " , "))",
+                                            summary: "Summary: \(model.summary)",
                                             seasons: .init(episodes: seasons))
     return details
   }

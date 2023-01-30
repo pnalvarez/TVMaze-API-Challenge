@@ -162,7 +162,7 @@ final class SeriesDetailsViewController: UIViewController {
   }
   
   private func updateUI(_ model: SeriesDetailsDisplayModel) {
-    posterImageView.sd_setImage(with: model.image)
+    posterImageView.sd_setImage(with: model.image, placeholderImage: UIImage(named: "loading-image"))
     nameLabel.text = model.name
     genresLabel.text = model.genres
     summaryLabel.text = model.summary
@@ -172,7 +172,7 @@ final class SeriesDetailsViewController: UIViewController {
     }
     for i in (0..<model.seasons.episodes.count) {
       let seasonView = SeriesSeasonView(frame: .zero, seasonNumber: i)
-      seasonView.setContent("Season \(i)", model.seasons.episodes[i])
+      seasonView.setContent("Season \(i+1)", model.seasons.episodes[i])
       seasonView.delegate = self
       seasonStackView.addArrangedSubview(seasonView)
     }

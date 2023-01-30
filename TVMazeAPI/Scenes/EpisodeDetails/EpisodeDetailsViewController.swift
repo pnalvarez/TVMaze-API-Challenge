@@ -69,7 +69,7 @@ final class EpisodeDetailsViewController: UIViewController {
   }
   
   private func fillContent() {
-    posterImageView.sd_setImage(with: viewModel.episodeDisplayModel.image)
+    posterImageView.sd_setImage(with: viewModel.episodeDisplayModel.image, placeholderImage: UIImage(named: "loading-image"))
     nameLabel.text = viewModel.episodeDisplayModel.name
     summaryLabel.text = viewModel.episodeDisplayModel.summary
     seasonLabel.text = viewModel.episodeDisplayModel.season
